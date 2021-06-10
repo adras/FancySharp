@@ -38,6 +38,15 @@ namespace FancySharp
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Custom overload to prevent it from just being: FancySharp.TreeRecordAsClass, similar to what record does
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"Name: '{name}', Height: '{height}'";
+        }
+
         public override int GetHashCode()
         {
             return HashCode.Combine(name, height);
@@ -103,6 +112,7 @@ namespace FancySharp
             Console.WriteLine($"pineRecord == otherPineRecord: " + BoolToEqualOrNotToEqualHAHA(pineRecord == otherPineRecord));
             Console.WriteLine($"pineRecord == tallerPineRecord: " + BoolToEqualOrNotToEqualHAHA(pineRecord == tallerPineRecord));
             Console.WriteLine($"pineRecord == instancePineRecord: " + BoolToEqualOrNotToEqualHAHA(pineRecord == instancePineRecord));
+            Console.WriteLine($"pineRecord.ToString(): {pineRecord.ToString()}");
             Console.WriteLine();
 
             TreeClass pineClass = new TreeClass() { name = "Pine", height = 44 };
@@ -113,6 +123,7 @@ namespace FancySharp
             Console.WriteLine($"pineClass == otherPineClass: " + BoolToEqualOrNotToEqualHAHA(pineClass == otherPineClass));
             Console.WriteLine($"pineClass == tallerPineClass: " + BoolToEqualOrNotToEqualHAHA(pineClass == tallerPineClass));
             Console.WriteLine($"pineClass == instancePineClass: " + BoolToEqualOrNotToEqualHAHA(pineClass == instancePineClass));
+            Console.WriteLine($"pineClass.ToString(): {pineClass.ToString()}");
             Console.WriteLine();
 
             TreeRecordAsClass pineClassRecord = new TreeRecordAsClass() { name = "Pine", height = 44 };
@@ -123,8 +134,10 @@ namespace FancySharp
             Console.WriteLine($"pineClassRecord == otherPineClassRecord: " + BoolToEqualOrNotToEqualHAHA(pineClassRecord == otherPineClassRecord));
             Console.WriteLine($"pineClassRecord == tallerPineClassRecord: " + BoolToEqualOrNotToEqualHAHA(pineClassRecord == tallerPineClassRecord));
             Console.WriteLine($"pineClassRecord == instancePineClassRecord: " + BoolToEqualOrNotToEqualHAHA(pineClassRecord == instancePineClassRecord));
+            Console.WriteLine($"pineClassRecord.ToString(): {pineClassRecord.ToString()}");
             Console.WriteLine();
 
+            
         }
     }
 }
