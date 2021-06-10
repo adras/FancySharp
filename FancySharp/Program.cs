@@ -11,6 +11,8 @@ namespace FancySharp
             MaybeTest.Run();
             Console.WriteLine("-----------------------------");
             RecordTest.Run();
+            Console.WriteLine("-----------------------------");
+            RecordTestMore.Run();
         }
     }
 }
