@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace FancySharp
 {
     public abstract class Maybe<T>
     {
@@ -71,7 +71,7 @@ namespace ConsoleApp1
             return new Some<Person>(result);
         }
 
-        void Run()
+        public static void Run()
         {
             List<string> persons = new List<string>
             {
